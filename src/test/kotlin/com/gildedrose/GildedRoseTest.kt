@@ -18,15 +18,15 @@ class GildedRoseTest {
     fun item_beforeSellByDateTest() {
         // At the end of each day our system lowers both values for every item
 
-        val initialSellIn = 20
-        val initialQuality = 25
+        val initialSellIn = 10
+        val initialQuality = 15
 
-        val items = arrayOf(Item("foo", initialSellIn, initialQuality))
+        val items = arrayOf(Item("normal", initialSellIn, initialQuality))
         val app = GildedRose(items)
-        for (i in 0 until initialSellIn) {
+        for (i in 1 until initialSellIn) {
             app.updateQuality()
-            assertEquals((initialSellIn - 1) - i, app.items[0].sellIn)
-            assertEquals((initialQuality - 1) - i, app.items[0].quality)
+            assertEquals(initialSellIn - 1 * i, app.items[0].sellIn)
+            assertEquals(initialQuality - 1 * i, app.items[0].quality)
         }
     }
 
@@ -37,7 +37,7 @@ class GildedRoseTest {
         val initialSellIn = 0
         val initialQuality = 25
 
-        val items = arrayOf(Item("foo", initialSellIn, initialQuality))
+        val items = arrayOf(Item("normal", initialSellIn, initialQuality))
         val app = GildedRose(items)
         for (i in 1..10) {
             app.updateQuality()
@@ -153,7 +153,7 @@ class GildedRoseTest {
 
         val items = arrayOf(Item("Conjured Mana Cake", initialSellIn, initialQuality))
         val app = GildedRose(items)
-        for (i in 0 until initialSellIn) {
+        for (i in 1 until initialSellIn) {
             app.updateQuality()
             assertEquals((initialSellIn - 1) - i, app.items[0].sellIn)
             assertEquals((initialQuality - 2) - i, app.items[0].quality)
