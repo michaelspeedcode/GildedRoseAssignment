@@ -1,6 +1,7 @@
 package com.gildedrose
 
 import org.junit.Assert.assertEquals
+import org.junit.Ignore
 import org.junit.Test
 
 class GildedRoseTest {
@@ -142,20 +143,21 @@ class GildedRoseTest {
         }
     }
 
-//    @Test
-//    fun conjuredItemsTest() {
-//        // "Conjured" items degrade in Quality twice as fast as normal items
-//
-//        val initialSellIn = 20
-//        val initialQuality = 25
-//
-//        val items = arrayOf(Item("Conjured Mana Cake", initialSellIn, initialQuality))
-//        val app = GildedRose(items)
-//        for (i in 0 until initialSellIn) {
-//            app.updateQuality()
-//            assertEquals((initialSellIn - 1) - i, app.items[0].sellIn)
-//            assertEquals((initialQuality - 2) - i, app.items[0].quality)
-//        }
-//    }
+    @Test
+    @Ignore
+    fun conjuredItemsTest() {
+        // "Conjured" items degrade in Quality twice as fast as normal items
+
+        val initialSellIn = 20
+        val initialQuality = 25
+
+        val items = arrayOf(Item("Conjured Mana Cake", initialSellIn, initialQuality))
+        val app = GildedRose(items)
+        for (i in 0 until initialSellIn) {
+            app.updateQuality()
+            assertEquals((initialSellIn - 1) - i, app.items[0].sellIn)
+            assertEquals((initialQuality - 2) - i, app.items[0].quality)
+        }
+    }
 
 }
