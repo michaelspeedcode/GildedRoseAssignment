@@ -48,8 +48,6 @@ class GildedRoseTest {
 
     @Test
     fun agedBrie_beforeSellByDateTest() {
-        //"Aged Brie" actually increases in Quality the older it gets
-
         val initialSellIn = 10
         val initialQuality = 15
 
@@ -63,7 +61,7 @@ class GildedRoseTest {
     }
 
     @Test
-    fun agedBrieAfterSellByDateTest() {
+    fun agedBrie_afterSellByDateTest() {
         //"Aged Brie" actually increases in Quality the older it gets
 
         val initialSellIn = 0

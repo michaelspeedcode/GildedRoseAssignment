@@ -2,22 +2,38 @@ package com.gildedrose
 
 class GildedRose(var items: Array<Item>) {
 
+    private fun updateBrie(item: Item) {
+        with(item) {
+            sellIn -= 1;
+            if (quality >= 50) return
+
+            quality += 1
+
+            if (sellIn <= 0) {
+                quality += 1;
+            }
+        }
+    }
+
     private fun updateNormal(item: Item) {
-        item.sellIn -= 1;
-        if (item.quality == 0) return
+        with(item) {
+            sellIn -= 1;
+            if (quality == 0) return
 
-        item.quality -= 1;
+            quality -= 1;
 
-        if (item.sellIn <= 0) {
-            item.quality -= 1;
+            if (sellIn <= 0) {
+                quality -= 1;
+            }
         }
     }
 
     fun updateQuality() {
         for (i in items.indices) {
 
-            when (items[i].name){
+            when (items[i].name) {
                 "normal" -> updateNormal(items[i])
+                "Aged Brie" -> updateBrie(items[i])
             }
 
             return
