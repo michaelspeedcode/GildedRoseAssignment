@@ -59,10 +59,10 @@ class GildedRose(var items: Array<Item>) {
         for (i in items.indices) {
 
             when (items[i].name) {
-                "normal" -> updateNormal(items[i])
                 "Aged Brie" -> updateBrie(items[i])
                 "Backstage passes to a TAFKAL80ETC concert" -> updateBackstagePass(items[i])
                 "Sulfuras, Hand of Ragnaros" -> updateSulfuras(items[i])
+                else -> updateNormal(items[i])
             }
         }
     }
