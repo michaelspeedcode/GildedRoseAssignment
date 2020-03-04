@@ -49,7 +49,7 @@ class GildedRoseTest {
     @Test
     fun agedBrie_beforeSellByDateTest() {
         val initialSellIn = 10
-        val initialQuality = 15
+        val initialQuality = 43
 
         val items = arrayOf(Item("Aged Brie", initialSellIn, initialQuality))
         val app = GildedRose(items)
