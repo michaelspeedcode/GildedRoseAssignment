@@ -11,7 +11,7 @@ class GildedRose(var items: Array<Item>) {
             "Aged Brie" -> AgedBrieItemStrategy
             "Sulfuras, Hand of Ragnaros" -> SulfurasItemStrategy
             "Backstage passes to a TAFKAL80ETC concert" -> BackstageItemStrategy
-            "Conjured" -> ConjuredItemStrategy
+            "Conjured Mana Cake" -> ConjuredItemStrategy
             else -> NormalItemStrategy
         }
     }
