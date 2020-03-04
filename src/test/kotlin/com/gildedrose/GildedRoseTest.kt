@@ -142,7 +142,6 @@ class GildedRoseTest {
     }
 
     @Test
-    @Ignore
     fun conjuredItemsTest() {
         // "Conjured" items degrade in Quality twice as fast as normal items
 
@@ -153,8 +152,8 @@ class GildedRoseTest {
         val app = GildedRose(items)
         for (i in 1 until initialSellIn) {
             app.updateQuality()
-            assertEquals((initialSellIn - 1) - i, app.items[0].sellIn)
-            assertEquals((initialQuality - 2) - i, app.items[0].quality)
+            assertEquals(initialSellIn - i, app.items[0].sellIn)
+            assertEquals(0.coerceAtLeast(initialQuality  - i * 2), app.items[0].quality)
         }
     }
 
