@@ -66,7 +66,14 @@ sealed class ItemStrategy {
 
     object ConjuredItemStrategy : ItemStrategy() {
         override fun updateItem(item: Item) {
-            super.updateItem(item)
+            with(item) {
+                sellIn -= 1
+                if (quality <= 2) {
+                    quality = 0
+                    return
+                }
+                quality -= 2
+            }
         }
     }
 
