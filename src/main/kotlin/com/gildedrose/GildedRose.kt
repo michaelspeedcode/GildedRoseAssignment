@@ -15,6 +15,9 @@ class GildedRose(var items: Array<Item>) {
         }
     }
 
+    private fun updateSulfuras(item: Item) {
+    }
+
     private fun updateBackstagePass(item: Item) {
         with(item) {
             sellIn -= 1
@@ -59,6 +62,7 @@ class GildedRose(var items: Array<Item>) {
                 "normal" -> updateNormal(items[i])
                 "Aged Brie" -> updateBrie(items[i])
                 "Backstage passes to a TAFKAL80ETC concert" -> updateBackstagePass(items[i])
+                "Sulfuras, Hand of Ragnaros" -> updateSulfuras(items[i])
             }
         }
     }
