@@ -6,10 +6,10 @@ sealed class ItemStrategy {
 
     open fun updateItem(item: Item) {
         with(item) {
-            sellIn -= 1;
+            sellIn -= 1
             if (quality == 0) return
 
-            quality -= 1;
+            quality -= 1
 
             if (sellIn <= 0) {
                 quality -= 1
@@ -77,9 +77,5 @@ sealed class ItemStrategy {
         }
     }
 
-    object NormalItemStrategy : ItemStrategy() {
-        override fun updateItem(item: Item) {
-            super.updateItem(item)
-        }
-    }
+    object NormalItemStrategy : ItemStrategy()
 }

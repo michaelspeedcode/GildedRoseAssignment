@@ -1,7 +1,6 @@
 package com.gildedrose
 
 import org.junit.Assert.assertEquals
-import org.junit.Ignore
 import org.junit.Test
 
 class GildedRoseTest {
@@ -132,7 +131,7 @@ class GildedRoseTest {
         val initialSellIn = 5
         val initialQuality = 1
 
-        val items = arrayOf<Item>(Item("Backstage passes to a TAFKAL80ETC concert", initialSellIn, initialQuality))
+        val items = arrayOf(Item("Backstage passes to a TAFKAL80ETC concert", initialSellIn, initialQuality))
         val app = GildedRose(items)
         for (i in 1..initialSellIn) {
             app.updateQuality()
