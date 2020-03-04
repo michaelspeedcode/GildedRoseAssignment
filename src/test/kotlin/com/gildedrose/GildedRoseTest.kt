@@ -94,7 +94,7 @@ class GildedRoseTest {
     }
 
     @Test
-    fun backstagePass_AfterSellByDateTest() {
+    fun backstagePass_afterSellByDateTest() {
         //	Quality drops to 0 after the concert
 
         val initialSellIn = 0
@@ -110,7 +110,7 @@ class GildedRoseTest {
     }
 
     @Test
-    fun backstagePass_Within10DaysTest() {
+    fun backstagePass_within10DaysTest() {
         //	Quality increases by 2 when there are 10 days or less
 
         val initialSellIn = 10
@@ -126,15 +126,15 @@ class GildedRoseTest {
     }
 
     @Test
-    fun backstagePassSellWithin5Days() {
+    fun backstagePass_within5DaysTest() {
         // ... and by 3 when there are 5 days or less but
 
         val initialSellIn = 5
-        val initialQuality = 40
+        val initialQuality = 1
 
         val items = arrayOf<Item>(Item("Backstage passes to a TAFKAL80ETC concert", initialSellIn, initialQuality))
         val app = GildedRose(items)
-        for (i in 1..5) {
+        for (i in 1..initialSellIn) {
             app.updateQuality()
             assertEquals(initialSellIn - i, app.items[0].sellIn)
             assertEquals(50.coerceAtMost(initialQuality + 3 * i), app.items[0].quality)
